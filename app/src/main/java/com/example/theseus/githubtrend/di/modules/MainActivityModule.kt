@@ -1,5 +1,7 @@
 package com.example.theseus.githubtrend.di.modules
 
+import android.content.Context
+import com.example.theseus.githubtrend.R
 import com.example.theseus.githubtrend.di.scopes.MainActivityScope
 import com.example.theseus.githubtrend.ui.main.IMainPresenter
 import com.example.theseus.githubtrend.ui.main.IMainView
@@ -8,11 +10,10 @@ import com.example.theseus.githubtrend.ui.main.RepoListAdapter
 import dagger.Module
 import dagger.Provides
 import io.reactivex.disposables.CompositeDisposable
-import java.text.SimpleDateFormat
-import java.util.*
+import org.jetbrains.anko.indeterminateProgressDialog
 
 @Module
-class MainActivityModule {
+class MainActivityModule(val context:Context) {
 
     @Provides
     @MainActivityScope
@@ -26,5 +27,11 @@ class MainActivityModule {
     @MainActivityScope
     fun provideRepoListAdapter() = RepoListAdapter()
 
+
+    @Provides
+    @MainActivityScope
+    fun progressDialog() = context.indeterminateProgressDialog(context.getString(R.string.please_wait)).apply {
+        hide()
+    }
 
 }

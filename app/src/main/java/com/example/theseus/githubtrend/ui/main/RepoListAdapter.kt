@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.theseus.githubtrend.R
 import com.example.theseus.githubtrend.data.api.model.TrendingAPIResponse.RepoItem
+import kotlinx.android.synthetic.main.repo_item.view.*
 import kotlin.properties.Delegates
 
 class RepoListAdapter : RecyclerView.Adapter<RepoListAdapter.RepoItemViewHolder>(),
@@ -28,7 +29,10 @@ class RepoListAdapter : RecyclerView.Adapter<RepoListAdapter.RepoItemViewHolder>
 
     inner class RepoItemViewHolder(val view: View): RecyclerView.ViewHolder(view){
         fun bind(adapterPosition: Int) {
-
+            view.name.text = mRepoList[adapterPosition].name
+            view.description.text = mRepoList[adapterPosition].description
+            view.star_count.text = mRepoList[adapterPosition].stargazersCount.toString()
+            view.watch_count.text = mRepoList[adapterPosition].watchersCount.toString()
         }
 
     }

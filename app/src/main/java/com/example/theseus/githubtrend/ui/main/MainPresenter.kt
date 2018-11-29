@@ -5,7 +5,6 @@ import com.example.theseus.githubtrend.di.scopes.MainActivityScope
 import com.example.theseus.githubtrend.ui.base.BasePresenter
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.subscribeBy
-import timber.log.Timber
 import javax.inject.Inject
 
 @MainActivityScope
@@ -17,15 +16,18 @@ class MainPresenter<V: IMainView> @Inject constructor(val mDataManager: IDataMan
         fetchTrendingAndroidRepos()
     }
 
-    fun fetchTrendingAndroidRepos() {
+    override fun fetchTrendingAndroidRepos() {
+        view?.showProgressDialog()
         mCompositeDisposable.add(
                 mDataManager.fetchTrendingAndroidRepos()
                         .subscribeBy(
                                 onSuccess = {
-
-
+                                    view?.populateRepoList(it.items)
+                                    view?.hideProgressDialog()
+                                    view?.hideErrorViews()
                                 }, onError = {
-
+                                view?.hideProgressDialog()
+                                view?.showErrorViews()
                         }
                         )
         )

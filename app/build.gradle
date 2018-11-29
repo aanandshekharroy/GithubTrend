@@ -56,4 +56,10 @@ dependencies {
     //Anko
     implementation "org.jetbrains.anko:anko-commons:0.10.5"
 
+    //CardView
+    implementation "com.android.support:cardview-v7:28.0.0"
+
+    //RxView
+    implementation 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
+
 }

@@ -1,4 +1,4 @@
-package com.example.theseus.dahmakantest.di.modules
+package com.example.theseus.githubtrend.di.modules
 
 import com.example.theseus.githubtrend.data.api.APIService
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -24,7 +24,7 @@ class NetworkModule {
     @Provides
     @Singleton
     fun retrofitInstance(client: OkHttpClient.Builder) = Retrofit.Builder()
-            .baseUrl("http://staging-api.dahmakan.com/")
+            .baseUrl("https://api.github.com/")
             .client(client.build())
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

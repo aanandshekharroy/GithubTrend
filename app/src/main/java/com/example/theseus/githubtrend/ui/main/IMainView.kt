@@ -4,5 +4,9 @@ import com.example.theseus.githubtrend.data.api.model.TrendingAPIResponse.RepoIt
 import com.example.theseus.githubtrend.ui.base.IBaseView
 
 interface IMainView: IBaseView {
-    fun setRepoList(repoList: List<RepoItem>)
+    fun populateRepoList(repoList: List<RepoItem>)
+    fun showProgressDialog()
+    fun hideErrorViews()
+    fun hideProgressDialog()
+    fun showErrorViews()
 }
