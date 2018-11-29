@@ -1,5 +1,7 @@
 package com.example.theseus.githubtrend.data.api.model.TrendingAPIResponse
 
+import android.os.Parcel
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import javax.annotation.Generated
 
@@ -154,7 +156,7 @@ data class RepoItem(
 	val hasPages: Boolean? = null,
 
 	@field:SerializedName("owner")
-	val owner: Owner? = null,
+	val owner: Owner,
 
 	@field:SerializedName("commits_url")
 	val commitsUrl: String? = null,
@@ -187,7 +189,7 @@ data class RepoItem(
 	val contentsUrl: String? = null,
 
 	@field:SerializedName("mirror_url")
-	val mirrorUrl: Any? = null,
+	val mirrorUrl: String? = null,
 
 	@field:SerializedName("milestones_url")
 	val milestonesUrl: String? = null,
@@ -224,4 +226,171 @@ data class RepoItem(
 
 	@field:SerializedName("forks_count")
 	val forksCount: Int? = null
-)
+) : Parcelable {
+	constructor(parcel: Parcel) : this(
+		parcel.readValue(Int::class.java.classLoader) as? Int,
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readValue(Double::class.java.classLoader) as? Double,
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readValue(Int::class.java.classLoader) as? Int,
+		parcel.readValue(Int::class.java.classLoader) as? Int,
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readParcelable(License::class.java.classLoader),
+		parcel.readString(),
+		parcel.readValue(Int::class.java.classLoader) as? Int,
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
+		parcel.readString(),
+		parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
+		parcel.readString(),
+		parcel.readValue(Int::class.java.classLoader) as? Int,
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readValue(Int::class.java.classLoader) as? Int,
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
+		parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
+		parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
+		parcel.readParcelable(Owner::class.java.classLoader),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readValue(Int::class.java.classLoader) as? Int,
+		parcel.readValue(Int::class.java.classLoader) as? Int,
+		parcel.readString(),
+		parcel.readString(),
+		parcel.readValue(Int::class.java.classLoader) as? Int
+	) {
+	}
+
+	override fun writeToParcel(parcel: Parcel, flags: Int) {
+		parcel.writeValue(stargazersCount)
+		parcel.writeString(pushedAt)
+		parcel.writeString(subscriptionUrl)
+		parcel.writeString(language)
+		parcel.writeString(branchesUrl)
+		parcel.writeString(issueCommentUrl)
+		parcel.writeString(labelsUrl)
+		parcel.writeValue(score)
+		parcel.writeString(subscribersUrl)
+		parcel.writeString(releasesUrl)
+		parcel.writeString(svnUrl)
+		parcel.writeValue(id)
+		parcel.writeValue(forks)
+		parcel.writeString(archiveUrl)
+		parcel.writeString(gitRefsUrl)
+		parcel.writeString(forksUrl)
+		parcel.writeString(statusesUrl)
+		parcel.writeString(sshUrl)
+		parcel.writeParcelable(license, flags)
+		parcel.writeString(fullName)
+		parcel.writeValue(size)
+		parcel.writeString(languagesUrl)
+		parcel.writeString(htmlUrl)
+		parcel.writeString(collaboratorsUrl)
+		parcel.writeString(cloneUrl)
+		parcel.writeString(name)
+		parcel.writeString(pullsUrl)
+		parcel.writeString(defaultBranch)
+		parcel.writeString(hooksUrl)
+		parcel.writeString(treesUrl)
+		parcel.writeString(tagsUrl)
+		parcel.writeValue(jsonMemberPrivate)
+		parcel.writeString(contributorsUrl)
+		parcel.writeValue(hasDownloads)
+		parcel.writeString(notificationsUrl)
+		parcel.writeValue(openIssuesCount)
+		parcel.writeString(description)
+		parcel.writeString(createdAt)
+		parcel.writeValue(watchers)
+		parcel.writeString(keysUrl)
+		parcel.writeString(deploymentsUrl)
+		parcel.writeValue(hasProjects)
+		parcel.writeValue(archived)
+		parcel.writeValue(hasWiki)
+		parcel.writeString(updatedAt)
+		parcel.writeString(commentsUrl)
+		parcel.writeString(stargazersUrl)
+		parcel.writeString(gitUrl)
+		parcel.writeValue(hasPages)
+		parcel.writeParcelable(owner, flags)
+		parcel.writeString(commitsUrl)
+		parcel.writeString(compareUrl)
+		parcel.writeString(gitCommitsUrl)
+		parcel.writeString(blobsUrl)
+		parcel.writeString(gitTagsUrl)
+		parcel.writeString(mergesUrl)
+		parcel.writeString(downloadsUrl)
+		parcel.writeValue(hasIssues)
+		parcel.writeString(url)
+		parcel.writeString(contentsUrl)
+		parcel.writeString(mirrorUrl)
+		parcel.writeString(milestonesUrl)
+		parcel.writeString(teamsUrl)
+		parcel.writeValue(fork)
+		parcel.writeString(issuesUrl)
+		parcel.writeString(eventsUrl)
+		parcel.writeString(issueEventsUrl)
+		parcel.writeString(assigneesUrl)
+		parcel.writeValue(openIssues)
+		parcel.writeValue(watchersCount)
+		parcel.writeString(nodeId)
+		parcel.writeString(homepage)
+		parcel.writeValue(forksCount)
+	}
+
+	override fun describeContents(): Int {
+		return 0
+	}
+
+	companion object CREATOR : Parcelable.Creator<RepoItem> {
+		override fun createFromParcel(parcel: Parcel): RepoItem {
+			return RepoItem(parcel)
+		}
+
+		override fun newArray(size: Int): Array<RepoItem?> {
+			return arrayOfNulls(size)
+		}
+	}
+}

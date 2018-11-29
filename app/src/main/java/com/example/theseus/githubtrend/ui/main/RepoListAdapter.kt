@@ -33,6 +33,9 @@ class RepoListAdapter : RecyclerView.Adapter<RepoListAdapter.RepoItemViewHolder>
             view.description.text = mRepoList[adapterPosition].description
             view.star_count.text = mRepoList[adapterPosition].stargazersCount.toString()
             view.watch_count.text = mRepoList[adapterPosition].watchersCount.toString()
+            view.setOnClickListener {
+                mListener(mRepoList[adapterPosition])
+            }
         }
 
     }

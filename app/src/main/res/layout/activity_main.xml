@@ -39,6 +39,7 @@
     <android.support.constraint.Group
             android:id="@+id/error_views"
             android:layout_width="0dp"
+            android:visibility="gone"
             android:layout_height="0dp"
             app:constraint_referenced_ids="try_again,error_message"/>
 </android.support.constraint.ConstraintLayout>

@@ -1,5 +1,7 @@
 package com.example.theseus.githubtrend.data.api.model.TrendingAPIResponse
 
+import android.os.Parcel
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import javax.annotation.Generated
 
@@ -59,4 +61,56 @@ data class Owner(
 
 	@field:SerializedName("organizations_url")
 	val organizationsUrl: String? = null
-)
+) : Parcelable {
+	constructor(source: Parcel) : this(
+		source.readString(),
+		source.readString(),
+		source.readString(),
+		source.readString(),
+		source.readString(),
+		source.readString(),
+		source.readString(),
+		source.readString(),
+		source.readString(),
+		source.readString(),
+		source.readString(),
+		source.readString(),
+		source.readString(),
+		source.readValue(Boolean::class.java.classLoader) as Boolean?,
+		source.readValue(Int::class.java.classLoader) as Int?,
+		source.readString(),
+		source.readString(),
+		source.readString()
+	)
+
+	override fun describeContents() = 0
+
+	override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
+		writeString(gistsUrl)
+		writeString(reposUrl)
+		writeString(followingUrl)
+		writeString(starredUrl)
+		writeString(login)
+		writeString(followersUrl)
+		writeString(type)
+		writeString(url)
+		writeString(subscriptionsUrl)
+		writeString(receivedEventsUrl)
+		writeString(avatarUrl)
+		writeString(eventsUrl)
+		writeString(htmlUrl)
+		writeValue(siteAdmin)
+		writeValue(id)
+		writeString(gravatarId)
+		writeString(nodeId)
+		writeString(organizationsUrl)
+	}
+
+	companion object {
+		@JvmField
+		val CREATOR: Parcelable.Creator<Owner> = object : Parcelable.Creator<Owner> {
+			override fun createFromParcel(source: Parcel): Owner = Owner(source)
+			override fun newArray(size: Int): Array<Owner?> = arrayOfNulls(size)
+		}
+	}
+}

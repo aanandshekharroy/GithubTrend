@@ -9,12 +9,14 @@ import com.example.theseus.githubtrend.R
 import com.example.theseus.githubtrend.data.api.model.TrendingAPIResponse.RepoItem
 import com.example.theseus.githubtrend.di.modules.MainActivityModule
 import com.example.theseus.githubtrend.ui.base.BaseActivity
+import com.example.theseus.githubtrend.ui.detail.RepoDetailActivity
 import com.jakewharton.rxbinding2.view.RxView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.subscribeBy
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
+import org.jetbrains.anko.startActivity
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
@@ -51,7 +53,7 @@ class MainActivity : BaseActivity(), IMainView {
     lateinit var mCompositeDisposable: CompositeDisposable
     // click listener: invoked when clicked on repo list item
     val repoClickListener = { repo: RepoItem ->
-//        startActivity<RepoDetailActivity>("order" to order)
+        startActivity<RepoDetailActivity>("repo" to repo)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
