@@ -36,7 +36,9 @@ class RepoDetailActivity : BaseActivity(), IRepoDetailView {
             openRepoLinkInBrowser()
         }
     }
-
+    /*
+    * Check if intent can be handled by any app in the phone. If so, launch it
+    * */
     private fun openRepoLinkInBrowser() {
         val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse(mRepo.owner.htmlUrl))
         if (webIntent.resolveActivity(packageManager) != null) {

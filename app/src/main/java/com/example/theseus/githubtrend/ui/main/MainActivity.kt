@@ -69,7 +69,7 @@ class MainActivity : BaseActivity(), IMainView {
         mRepoListAdapter.mListener = repoClickListener
         repo_list.layoutManager = LinearLayoutManager(this)
         repo_list.adapter = mRepoListAdapter
-
+        //Add throttle to button click o prevent wasteful frequent requests
         mCompositeDisposable.add(
             RxView.clicks(try_again)
                 .throttleFirst(2, TimeUnit.SECONDS)

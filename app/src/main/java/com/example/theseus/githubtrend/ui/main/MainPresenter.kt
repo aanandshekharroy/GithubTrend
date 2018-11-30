@@ -15,7 +15,10 @@ class MainPresenter<V: IMainView> @Inject constructor(val mDataManager: IDataMan
         super.onAttach(v)
         fetchTrendingAndroidRepos()
     }
-
+    /*
+    * Fetch repositories over the network.
+    * Populate views accordingly
+    * */
     override fun fetchTrendingAndroidRepos() {
         view?.showProgressDialog()
         mCompositeDisposable.add(
@@ -31,5 +34,10 @@ class MainPresenter<V: IMainView> @Inject constructor(val mDataManager: IDataMan
                         }
                         )
         )
+    }
+
+    override fun onDetach() {
+        mCompositeDisposable.dispose()
+        super.onDetach()
     }
 }
