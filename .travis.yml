@@ -34,7 +34,7 @@ android:
     - extra-android-m2repository
 script:
 #        - ./gradlew build
-        - ./gradlew clean build
+#        - ./gradlew clean build
         - ./gradlew assembleDebug
         - ./gradlew test
         - ./gradlew lint
