@@ -8,5 +8,5 @@ GithubTrend lists trending Android projects from Github.
 * *RxBindings* **for reactify-ing UI.**
 * **Uses ConstraintLayout for views.**
 * **App follows** *Material design principles.*
-
+* **Unit tests using** *Mockito* and *JUnit Framework*
 
