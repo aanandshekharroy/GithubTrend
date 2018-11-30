@@ -1,4 +1,4 @@
-# GithubTrend
+# GithubTrend [![Build Status](https://travis-ci.org/aanandshekharroy/GithubTrend.svg?branch=master)](https://travis-ci.org/aanandshekharroy/GithubTrend)
 GithubTrend lists trending Android projects from Github.
 ### Important Features
 * **100% Kotlin.**
@@ -8,5 +8,6 @@ GithubTrend lists trending Android projects from Github.
 * *RxBindings* **for reactify-ing UI.**
 * **Uses ConstraintLayout for views.**
 * **App follows** *Material design principles.*
-* **Unit tests using** *Mockito* and *JUnit Framework*
+* **Unit tests using** *Mockito* **and** *JUnit Framework*
+* **Continuous integration using** *TravisCI*
 
