@@ -15,7 +15,7 @@
                                                  >
         <TextView
                 android:id="@+id/name"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/black"
                 android:textSize="@dimen/sp_24"
                 tools:text="Flutter"
                 android:layout_margin="@dimen/dp_4"
@@ -27,7 +27,8 @@
         <TextView
                 android:id="@+id/description"
                 tools:text="Flutter is next gen mobile dev"
-                android:textSize="@dimen/sp_20"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/grey_700"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/name"
@@ -38,10 +39,11 @@
         <View
                 android:id="@+id/separator"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_2"
-                android:background="@color/grey_400"
+                android:layout_height="@dimen/dp_1"
+                android:background="@color/black"
                 android:layout_marginStart="@dimen/dp_24"
                 android:layout_marginEnd="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_16"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/description"
@@ -52,33 +54,43 @@
                 android:src="@drawable/ic_star"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginStart="@dimen/dp_16"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/separator"/>
+                app:layout_constraintTop_toBottomOf="@id/separator"
+                android:layout_marginLeft="@dimen/dp_16"/>
         <TextView
                 android:id="@+id/star_count"
                 tools:text="23343"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
                 app:layout_constraintStart_toEndOf="@id/star_icon"
                 app:layout_constraintTop_toTopOf="@id/star_icon"
-                app:layout_constraintBottom_toBottomOf="@id/star_icon"/>
+                app:layout_constraintBottom_toBottomOf="@id/star_icon"
+                android:layout_marginStart="@dimen/dp_16"/>
 
 
         <ImageView
                 android:id="@+id/watch_icon"
                 android:src="@drawable/ic_watch"
                 android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/separator"/>
+                app:layout_constraintTop_toBottomOf="@id/separator"
+                android:layout_marginRight="@dimen/dp_16"/>
         <TextView
                 android:id="@+id/watch_count"
                 tools:text="23343"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_16"
                 app:layout_constraintEnd_toStartOf="@id/watch_icon"
                 app:layout_constraintTop_toTopOf="@id/watch_icon"
-                app:layout_constraintBottom_toBottomOf="@id/watch_icon"/>
+                app:layout_constraintBottom_toBottomOf="@id/watch_icon"
+                android:layout_marginRight="@dimen/dp_16"/>
 
     </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>

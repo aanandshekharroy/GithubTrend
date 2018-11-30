@@ -3,5 +3,7 @@
     <string name="try_again">Try again</string>
     <string name="please_wait">Please wait...</string>
     <string name="something_went_wrong">Something went wrong :(</string>
-    <string name="github_url">Github url</string>
+    <string name="github_url"><u>Github url</u></string>
+    <string name="cant_launch_url">Can\'t launch URL. No app found for this purpose.</string>
+    <string name="Owner">Owner</string>
 </resources>
