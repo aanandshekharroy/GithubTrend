@@ -1,6 +1,5 @@
 package com.example.theseus.githubtrend.ui.detail
 
-import android.app.PendingIntent.getActivity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -9,12 +8,10 @@ import com.example.theseus.githubtrend.R
 import com.example.theseus.githubtrend.data.api.model.TrendingAPIResponse.RepoItem
 import com.example.theseus.githubtrend.ui.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_detail.*
-import android.content.pm.PackageManager
-import android.util.Log
 import org.jetbrains.anko.toast
 
 
-class RepoDetailActivity : BaseActivity(), IRepoDetailView {
+class RepoDetailActivity : BaseActivity() {
     lateinit var mRepo: RepoItem
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -15,8 +15,8 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.subscribeBy
 import kotlinx.android.synthetic.main.activity_main.*
-import timber.log.Timber
 import org.jetbrains.anko.startActivity
+import timber.log.Timber
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
@@ -63,6 +63,7 @@ class MainActivity : BaseActivity(), IMainView {
         setContentView(R.layout.activity_main)
         mPresenter.onAttach(this)
         setupViews()
+        Timber.d("fettching")
     }
 
     private fun setupViews() {
@@ -86,6 +87,7 @@ class MainActivity : BaseActivity(), IMainView {
 
     override fun onDestroy() {
         mPresenter.onDetach()
+        mProgressDialog.dismiss()
         mCompositeDisposable.dispose()
         super.onDestroy()
     }
