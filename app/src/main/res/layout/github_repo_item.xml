@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   xmlns:tools="http://schemas.android.com/tools"
+                                   android:padding="@dimen/dp_16"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   android:layout_margin="@dimen/dp_16"
+                                   android:elevation="@dimen/dp_4">
+    <android.support.constraint.ConstraintLayout
+            android:padding="@dimen/dp_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+    >
+        <TextView
+                android:id="@+id/name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_24"
+                tools:text="Flutter"
+                android:layout_margin="@dimen/dp_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+                android:id="@+id/description"
+                tools:text="Flutter is next gen mobile dev"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/grey_700"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_margin="@dimen/dp_4"/>
+
+        <View
+                android:id="@+id/separator"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:background="@color/black"
+                android:layout_marginStart="@dimen/dp_24"
+                android:layout_marginEnd="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/description"
+        />
+
+        <ImageView
+                android:id="@+id/star_icon"
+                android:src="@drawable/ic_star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginStart="@dimen/dp_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/separator"
+                android:layout_marginLeft="@dimen/dp_16"/>
+        <TextView
+                android:id="@+id/star_count"
+                tools:text="23343"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                app:layout_constraintStart_toEndOf="@id/star_icon"
+                app:layout_constraintTop_toTopOf="@id/star_icon"
+                app:layout_constraintBottom_toBottomOf="@id/star_icon"
+                android:layout_marginStart="@dimen/dp_16"/>
+
+
+        <ImageView
+                android:id="@+id/watch_icon"
+                android:src="@drawable/ic_watch"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/separator"
+                android:layout_marginRight="@dimen/dp_16"/>
+        <TextView
+                android:id="@+id/watch_count"
+                tools:text="23343"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_16"
+                app:layout_constraintEnd_toStartOf="@id/watch_icon"
+                app:layout_constraintTop_toTopOf="@id/watch_icon"
+                app:layout_constraintBottom_toBottomOf="@id/watch_icon"
+                android:layout_marginRight="@dimen/dp_16"/>
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

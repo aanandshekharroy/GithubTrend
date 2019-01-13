@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent">
+    <TextView
+            android:id="@+id/repo_description"
+            android:textSize="@dimen/sp_24"
+            android:textColor="@color/grey_700"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            tools:text="JavaC"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+            android:id="@+id/owner_label"
+            android:textSize="@dimen/sp_24"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/repo_description"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/dp_24"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    <ImageView
+            android:id="@+id/avatar_url"
+            android:layout_width="@dimen/dp_125"
+            android:layout_height="@dimen/dp_125"
+            android:layout_marginStart="@dimen/dp_8"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/owner_label"
+            android:layout_marginLeft="@dimen/dp_8"/>
+
+    <TextView
+            android:id="@+id/owner_name"
+            tools:text="AanandRoy"
+            android:padding="@dimen/dp_8"
+            android:textSize="@dimen/sp_24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            app:layout_constraintStart_toEndOf="@id/avatar_url"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/avatar_url"
+            android:layout_marginLeft="@dimen/dp_16"
+            app:layout_constraintHorizontal_bias="0.0"/>
+
+    <TextView
+            android:id="@+id/github_url"
+            android:textSize="@dimen/sp_20"
+            android:padding="@dimen/dp_8"
+            android:textColor="@color/blue_900"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/owner_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintTop_toBottomOf="@id/owner_name"/>
+</android.support.constraint.ConstraintLayout>

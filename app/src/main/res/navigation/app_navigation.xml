@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/app_navigation"
+            app:startDestination="@id/main_view">
+        <fragment android:id="@+id/main_view"
+                android:label="@string/popular_android_repo"
+                android:name="com.example.theseus.githubtrend20.ui.main.MainFragment"
+                tools:layout="@layout/main_fragment">
+            <action android:id="@+id/open_detail_view"
+                app:destination="@id/detail_view">
+            </action>
+        </fragment>
+        <fragment
+            android:id="@+id/detail_view"
+            android:name="com.example.theseus.githubtrend20.ui.detail.DetailFragment"
+            tools:layout="@layout/fragment_detail">
+
+        </fragment>
+</navigation>
